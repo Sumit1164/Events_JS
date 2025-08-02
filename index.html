@@ -1,3 +1,9 @@
+<!-- Enents Handler 
+    1. Inline handling
+    2. node.events
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,19 +12,20 @@
     <title>Events JavaScript</title>
 
     <style>
+        body{
+            background-color: rgb(77, 117, 133);
+        }
         div{
             margin: 5px;
             padding: 4px;
             height: 100px;
             width: 100px;
-            background-color: lightsalmon;
+            background: lightsalmon;
             color: black;
             border: 1px solid black;
         }
 
     </style>
-
-
 </head>
 <body>
     <button id="btn1">Click me!</button>
@@ -28,16 +35,17 @@
 
     <script>
         let btn1 = document.querySelector('#btn1');
-        btn1.onclick = () =>{
+        btn1.onclick = (evt) =>{
             console.log('Button one clicked!');
-            let a = 28;
-            a++;
-            console.log(a);
+            console.log(evt);
+            console.log(evt.type);
+            console.log(evt.target);
+            console.log(evt.clientX, evt.ClientY);
         }
 
 
         let div = document.querySelector('div');
-        div.onmouseover = () => {
+        div.onmouseover = (evt) => {
             console.log('Mouse is over the div please move it!');
         }
     </script>
