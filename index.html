@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events JavaScript</title>
+
+
+
+
+
+    <style>
+        div{
+            margin: 5px;
+            padding: 4px;
+            height: 100px;
+            width: 100px;
+            background-color: lightsalmon;
+            color: black;
+            border: 1px solid black;
+        }
+
+    </style>
+
+
+
+
+
+</head>
+<body>
+    <button id="btn1">Click me!</button>
+    <button ondblclick="console.log('Button two time touch kara!')">Click me2!</button>
+    <div>Lorem ipsum dolor s</div>
+
+
+
+
+    <script>
+        let btn1 = document.querySelector('#btn1');
+        btn1.onclick = () =>{
+            console.log('Button one clicked!');
+            let a = 28;
+            a++;
+            console.log(a);
+        }
+
+
+        let div = document.querySelector('div');
+        div.onmouseover = () => {
+            console.log('Mouse is over the div please move it!');
+        }
+    </script>
+
+
+
+
+
+</body>
+</html>
