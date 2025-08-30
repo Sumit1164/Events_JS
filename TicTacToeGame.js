@@ -18,20 +18,27 @@ const winPatterns = [
 const resetGame = () => {
   turn = true;
   enableBoxes();
-    msgContainer.classList.add("hide");  
+  msgContainer.classList.add("hide");  
     
-  
   const winAudio = document.getElementById("win-audio");
-  winAudio.pause();
+    winAudio.pause();
+    winAudio.currentTime = 0;
+
+    const drawAudio = document.getElementById("draw-audio");
+    drawAudio.pause();
+    drawAudio.currentTime = 0;
+
+    const flash = document.getElementById("flash");
+    flash.classList.add("hide");
 };
 
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
         if (turn) {
-            box.innerText = "X";
+            box.innerText = "❌";
             turn = false;
         } else {
-            box.innerText = "O";
+            box.innerText = "⭕";
             turn = true;
         }
         box.disabled = true;
@@ -104,13 +111,45 @@ const checkWinner = () => {
         let pos2 = boxes[pattern[1]].innerText;
         let pos3 = boxes[pattern[2]].innerText;
 
-        if (pos1 != "" && pos2 != "" && pos3 != "") {
+        if (pos1 !== "" && pos2 !== "" && pos3 !== "") {
             if (pos1 === pos2 && pos2 === pos3) {
                 showWinner(pos1);
+                return;
             }
         }
+    }
+    let filled = Array.from(boxes).every((box) => box.innerText !== "");
+    if (filled) {
+      showDraw();
     }
 };
 
 newbtn.addEventListener("click", resetGame);
 resetbtn.addEventListener("click", resetGame);
+
+
+const showDraw = () => {
+  msg.innerText = "It's a Draw! 🤝";
+  msgContainer.classList.remove("hide");
+  disableBoxes();
+
+  
+  const drawAudio = document.getElementById("draw-audio");
+      if (drawAudio) {
+        drawAudio.pause();
+        drawAudio.currentTime = 0;
+        drawAudio.play();
+      }
+
+  
+  const flash = document.getElementById("flash");
+  if (flash) {
+    flash.style.background = "rgba(128, 128, 128, 0.4)";
+    flash.classList.remove("hide");
+
+    setTimeout(() => {
+      flash.classList.add("hide");
+      flash.style.background = ""; // reset
+    }, 700);
+  }
+};
