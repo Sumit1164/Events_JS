@@ -16,15 +16,16 @@ This project showcases the power of **JavaScript Events** through interactive el
 ---
 
 ## 🕹️ Game Preview
-- UI
+### UI
   
-<img width="1913" height="1010" alt="Screenshot 2025-08-30 172421" src="https://github.com/user-attachments/assets/bea2a935-88b8-4d97-9672-9f9760372b3e" />
+<img width="1909" height="1009" alt="Screenshot 2025-08-30 181101" src="https://github.com/user-attachments/assets/3f27d972-fc1a-4b6b-a41f-a8e698754485" />
 
-- Draw
+
+### Draw
   
 <img width="1903" height="1006" alt="Screenshot 2025-08-30 180024" src="https://github.com/user-attachments/assets/870010ff-a904-4d17-b6e1-722b08c8717e" />
 
-- Winner
+### Winner
   
 <img width="1886" height="1001" alt="Screenshot 2025-08-30 180208" src="https://github.com/user-attachments/assets/f8ce5973-0025-4923-8567-aeccfb8e466e" />
 
