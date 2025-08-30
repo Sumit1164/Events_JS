@@ -16,9 +16,13 @@ const winPatterns = [
 ];
 
 const resetGame = () => {
-    turn = true;
-    enableBoxes();
-    msgContainer.classList.add("hide");
+  turn = true;
+  enableBoxes();
+    msgContainer.classList.add("hide");  
+    
+  
+  const winAudio = document.getElementById("win-audio");
+  winAudio.pause();
 };
 
 boxes.forEach((box) => {
@@ -49,10 +53,51 @@ const enableBoxes = () => {
 };
 
 const showWinner = (winner) => {
-    msg.innerText = `Congratulations! ${winner} is the Winner`;
-    msgContainer.classList.remove("hide");
-    disableBoxes();
+  msg.innerText = `Congratulations! ${winner} is the Winner`;
+  msgContainer.classList.remove("hide");
+  disableBoxes();
+
+  const winAudio = document.getElementById("win-audio");
+  winAudio.pause();
+  winAudio.currentTime = 0;
+  winAudio.volume = 0.1;
+  winAudio.play();
+
+  const flash = document.getElementById("flash");
+  flash.classList.remove("hide");
+
+  setTimeout(() => {
+    flash.classList.add("hide");
+  }, 500);
+
+  launchConfetti(); // 🎉
 };
+
+function launchConfetti() {
+  const duration = 2 * 1000;
+  const end = Date.now() + duration;
+
+  (function frame() {
+    confetti({
+      particleCount: 5,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+    });
+    confetti({
+      particleCount: 5,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+}
+
+
 const checkWinner = () => {
     for (let pattern of winPatterns) {
         let pos1 = boxes[pattern[0]].innerText;

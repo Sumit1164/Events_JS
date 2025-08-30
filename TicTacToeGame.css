@@ -60,3 +60,32 @@ body{
 .hide{
     display: none;
 }
+
+
+
+
+#flash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: radial-gradient(circle, rgba(255,255,255,0.4), rgba(255,255,255,0));
+    z-index: 999;
+    animation: glow 1.5s ease-in-out;
+    pointer-events: none; 
+}
+
+@keyframes glow {
+    0% { opacity: 0; }
+    30% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
