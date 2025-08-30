@@ -16,8 +16,17 @@ This project showcases the power of **JavaScript Events** through interactive el
 ---
 
 ## 🕹️ Game Preview
+- UI
+  
+<img width="1913" height="1010" alt="Screenshot 2025-08-30 172421" src="https://github.com/user-attachments/assets/bea2a935-88b8-4d97-9672-9f9760372b3e" />
 
-![Tic Tac Toe Screenshot](screenshots/tic-tac-toe-1.png)
+- Draw
+  
+<img width="1903" height="1006" alt="Screenshot 2025-08-30 180024" src="https://github.com/user-attachments/assets/870010ff-a904-4d17-b6e1-722b08c8717e" />
+
+- Winner
+  
+<img width="1886" height="1001" alt="Screenshot 2025-08-30 180208" src="https://github.com/user-attachments/assets/f8ce5973-0025-4923-8567-aeccfb8e466e" />
 
 
 ---
